@@ -1,0 +1,122 @@
+Delete All Branches : 
+---------------------
+git branch -D $(git branch)
+
+Commiting :
+-----------
+git add .
+
+C:\Git\supplies\IM.Application>git commit -m "Issue fix for no Splunk log IMSimple Services" 
+or git commit -am "save arezzo files"
+
+C:\Git\supplies\IM.Application> git push --set-upstream origin supplies_target_Enc_AccNo
+
+creates branch and track to a remote branch, before this create this branch in github web page
+----------------------------------------------------------------------------------
+git fetch
+git checkout -b supplies_target_report --track origin/supplies_target_report
+
+git remote add upstream git@github.microsoft.com:SBG/supplies.git
+
+
+Moving to a particular commit time :
+------------------------------------
+git reset --hard 127bc0f8d45ce6102c584716729a4065593303a6
+it go backs to the state after this commit 
+
+checkout a single file from a specific commit
+----------------------------------------------
+git checkout f08a63ff4fa7b8479f8c698e5998ee1afcac3a4e Gemfile
+
+Other Commads :
+--------------
+git difftool --tool winmerge
+git branch --set-upstream-to origin/supplies_target 
+git difftool --dir-diff
+git show --pretty="" --name-only c4d818d7ce8ca0c395ef2a2e52de07b94a2a07cf
+git difftool c97dc1e67273586ea07db241c52049720b92b9a6:IM.Application/IM.SimpleServices/Utility/OrderUtils.cs 6ef2822cf5febc7bc0280cf0216e6867e952e954:IM.Application/IM.SimpleServices/Utility/OrderUtils.cs
+git log --since=5.days --author=db1
+File names in a commit 
+----------------------
+git show --pretty="" --name-only 4f38ed1796afe346bbdb1a30092bf0dc79e7405c
+
+git pull upstream supplies_targetxxx
+git difftool 0c3ad8076bad2e547b4a3c0fc7c1ed4c2219d199~1 0c3ad8076bad2e547b4a3c0fc7c1ed4c2219d199
+git difftool 87106c1eddde41767201172b201c552474469cea Tools/DevTools/vcm.bat
+git log --pretty=format:"%h %s" --graph --author=db1
+
+To discard untracked directores
+----------------------------
+git clean -fd
+
+Force Delete a Branch:
+----------------------
+git branch -D <branch>
+
+revert last commit and keep bring changes to local
+--------------------------------------------------
+git reset --soft HEAD~1
+
+git stash save -u "Your comments"
+Delete All Stash :
+------------------
+git stash clear
+This is for deleting individual : git stash drop stash@{0}
+
+To view the content of the most recent stash
+--------------------------------------------
+git stash show -p --name-only
+git stash show -p stash@{0} --name-only
+
+Stashing individual files
+-------------------------
+git stash push -m "describe changes to filename.ext" filename.ex
+
+Moving Stash from system to antoher
+------------------------------------
+git stash show -p > patch
+git apply /old/project/dir/patch
+
+get deleted folder back in local directory
+------------------------------------------
+git checkout -- path/to/folder
+
+Apply single file from Stash 
+----------------------------
+git checkout stash@{0} -- <filename>
+
+To get Commets given for a commit :
+---------------------------------
+git log --format=%B -n 1 98cadca8293968eb6da9ef913860fdca0ba082fd
+
+
+Applying previous version of a file
+-----------------------------------
+git checkout origin~1 C:\Zinc64PG\source\QB\Platform\Online\OLB_Util\OLB_Util.csproj
+
+Grep on the result for certain file type
+----------------------------------------
+grep ".*\.zip$"
+
+Listing the staged files name
+-----------------------------
+git diff --name-only --cached
+
+Latest commit that modified a file
+----------------------------------
+git log -n 1 --pretty=format:%H -- <File Path>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
